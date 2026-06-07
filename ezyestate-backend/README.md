@@ -1,12 +1,12 @@
-# EzyEstate Backend API
+# SocialEstate Backend API
 
-Complete production-ready backend for **EzyEstate** — a full-service real estate platform connecting property owners, builders, and buyers with end-to-end managed services.
+Complete production-ready backend for **SocialEstate** — a full-service real estate platform connecting property owners, builders, and buyers with end-to-end managed services.
 
 ## 🏗 Architecture
 
 - **Framework**: Express.js (Node.js)
 - **Database**: MongoDB (Mongoose ODM)
-- **Cache**: Redis (optional, for performance)
+- **Cache**: In-Memory Map Cache (high-performance, offline-safe)
 - **File Storage**: Cloudinary
 - **Payments**: Razorpay
 - **Notifications**: Twilio (SMS/WhatsApp), Nodemailer (Email)
@@ -38,7 +38,7 @@ src/
 
 - **Node.js** >= 18.0.0
 - **MongoDB** (local or Atlas)
-- **Redis** (optional, for caching)
+- **Cache**: In-Memory Cache
 - **Cloudinary** account (for image/file uploads)
 - **Razorpay** account (for payments)
 - **Twilio** account (for OTP/SMS/WhatsApp)
@@ -48,7 +48,7 @@ src/
 ```bash
 # Clone repository
 git clone <your-repo-url>
-cd ezyestate-backend
+cd SocialEstate/ezyestate-backend
 
 # Install dependencies
 npm install
@@ -84,7 +84,6 @@ RAZORPAY_KEY_ID=rzp_test_xxxx
 RAZORPAY_KEY_SECRET=your_secret
 TWILIO_ACCOUNT_SID=ACxxxx
 TWILIO_AUTH_TOKEN=your_token
-REDIS_HOST=localhost (optional)
 ```
 
 ---
@@ -216,13 +215,13 @@ All admin routes require `admin` or `superadmin` role.
 - **Helmet** for HTTP headers
 - **XSS** & **NoSQL injection** protection
 - **Account lockout** after failed login attempts
-- **Token blacklisting** on logout (Redis)
+- **Token blacklisting** on logout (In-Memory Cache)
 
 ---
 
 ## 📊 Performance Optimizations
 
-- **Redis caching** for listing/project feeds
+- **In-memory caching** for listing/project feeds
 - **Indexed queries** (geospatial, text search)
 - **Pagination** on all list endpoints
 - **Compression** middleware
@@ -284,4 +283,4 @@ For issues or questions, contact the development team.
 
 ## 📝 License
 
-Proprietary — EzyEstate Platform © 2024
+Proprietary — SocialEstate Platform © 2026

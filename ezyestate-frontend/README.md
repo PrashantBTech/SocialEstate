@@ -1,6 +1,6 @@
-# EzyEstate Frontend
+# SocialEstate Frontend
 
-React frontend for EzyEstate — full-service real estate platform.
+React frontend for SocialEstate — full-service real estate platform.
 
 ## Tech Stack
 - **React 18** + **Vite** (fast builds)
@@ -93,8 +93,8 @@ Fonts:    Playfair Display (headings) + DM Sans (body)
 VITE_API_BASE_URL=http://localhost:5000/api/v1
 VITE_SOCKET_URL=http://localhost:5000
 VITE_RAZORPAY_KEY_ID=rzp_test_xxxx
-VITE_APP_NAME=EzyEstate
-VITE_APP_URL=https://ezyestate.in
+VITE_APP_NAME=SocialEstate
+VITE_APP_URL=https://socialestate.in
 ```
 
 ## Deployment
@@ -117,7 +117,7 @@ vercel
 ```nginx
 server {
   listen 80;
-  root /var/www/ezyestate-frontend/dist;
+  root /var/www/socialestate-frontend/dist;
   index index.html;
   location / { try_files $uri $uri/ /index.html; }
   location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg)$ { expires 1y; add_header Cache-Control "public, immutable"; }
