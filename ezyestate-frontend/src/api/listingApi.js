@@ -1,0 +1,11 @@
+import api from './axios'
+export const getListings   = (params) => api.get('/listings', { params })
+export const getListingById= (id)     => api.get(`/listings/${id}`)
+export const getMyListings = (params) => api.get('/listings/my-listings', { params })
+export const createListing = (data)   => api.post('/listings', data)
+export const updateListing = (id, data)=> api.patch(`/listings/${id}`, data)
+export const uploadPhotos  = (id, formData) => api.post(`/listings/${id}/upload-photos`, formData, { headers: { 'Content-Type': 'multipart/form-data' }, timeout: 120000 })
+export const deletePhoto   = (id, photoId) => api.delete(`/listings/${id}/photos/${photoId}`)
+export const payServiceFee = (id)     => api.post(`/listings/${id}/pay-service-fee`)
+export const enquireListing= (id, data)=> api.post(`/listings/${id}/enquire`, data)
+export const shortlistListing=(id)    => api.post(`/listings/${id}/shortlist`)

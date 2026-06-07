@@ -1,0 +1,16 @@
+# Dependencies
+ezyestate-frontend/node_modules/
+ezyestate-backend/node_modules/
+
+# Production builds & outputs
+ezyestate-frontend/dist/
+ezyestate-backend/logs/
+ezyestate-backend/uploads/
+
+# Environment Secrets (CRITICAL)
+ezyestate-backend/.env
+
+# Editor and IDE configurations
+.idea/
+.vscode/
+*.log
